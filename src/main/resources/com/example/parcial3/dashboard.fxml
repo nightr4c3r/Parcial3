@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.parcial3.Controllers.DashboardController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.parcial3.Controllers.DashboardController">
+    <left>
+        <VBox spacing="12" prefWidth="260" style="-fx-background-color: #f6f6f8;">
+            <padding>
+                <Insets top="16" right="12" bottom="16" left="12"/>
+            </padding>
+            <Label text="Clinic Manager" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Separator/>
+            <Button text="Schedule Appointment" onAction="#onScheduleAppointment" maxWidth="Infinity"/>
+            <Button text="Create Patient" onAction="#onCreatePatient" maxWidth="Infinity"/>
+            <Button text="Create Doctor" onAction="#onCreateDoctor" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea">
+            <children>
+                <Label text="Select an action from the left sidebar" style="-fx-font-size: 16px; -fx-text-fill: #666;"/>
+            </children>
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </StackPane>
+    </center>
+</BorderPane>
