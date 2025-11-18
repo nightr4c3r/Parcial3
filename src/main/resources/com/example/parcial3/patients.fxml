@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.parcial3.Controllers.PatientsController">
+    <center>
+        <VBox spacing="16">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="120"/>
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+            </rowConstraints>
+
+            <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtName" promptText="First name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtLastName" promptText="Last name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="ID:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtId" promptText="Identifier" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Age:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtAge" promptText="e.g. 30" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Address:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtAddress" promptText="Address" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <TableView fx:id="tablePatients" prefHeight="260">
+                <columns>
+                    <TableColumn fx:id="colPName" text="Name" prefWidth="140"/>
+                    <TableColumn fx:id="colPLastName" text="Last Name" prefWidth="140"/>
+                    <TableColumn fx:id="colPID" text="ID" prefWidth="120"/>
+                    <TableColumn fx:id="colPAge" text="Age" prefWidth="80"/>
+                    <TableColumn fx:id="colPAddress" text="Address" prefWidth="220"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <top>
+        <Label text="Create Patient" style="-fx-font-size: 20px; -fx-font-weight: bold;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button text="Back" onAction="#onBack"/>
+            <Button text="Delete" onAction="#onDelete"/>
+            <Button text="Save" onAction="#onSave"/>
+        </HBox>
+    </bottom>
+</BorderPane>
